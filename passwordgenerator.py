@@ -1,19 +1,13 @@
 import string
 import random
 
-if __name__ == "__main__":
-    s1 = string.ascii_lowercase
-    s2 = string.ascii_uppercase
-    s3 = string.digits
-    s4 = string.punctuation
-    plen=int(input('ENTER YOUR PASSWORD LENGTH\n'))
-    s=[]
-    s.extend(list(s1))
-    s.extend(list(s2))
-    s.extend(list(s3))
-    s.extend(list(s4))
-    random.shuffle(s)
-    print("".join(s[0:plen]))
+def get_random_alphanumeric_string(length):
+    letters_and_digits = string.ascii_letters + string.digits
+    result_str = ''.join((random.choice(letters_and_digits) for i in range(length)))
+    print("Random alphanumeric String is:", result_str)
 
+password_length=int(input('ENTER YOUR PASSWORD LENGTH\n'))
+
+get_random_alphanumeric_string(password_length)
 
 
